@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode per Site</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup-container">
+      <!-- Header -->
+      <header class="popup-header">
+        <img src="icons/icon32.png" alt="Dark Mode icon" class="popup-icon" />
+        <span class="popup-title">Dark Mode per Site</span>
+      </header>
+
+      <!-- Hostname badge -->
+      <div class="hostname-row">
+        <span class="hostname-label">Current site:</span>
+        <span id="hostname" class="hostname-value" title="">—</span>
+      </div>
+
+      <!-- Status / error banner -->
+      <div
+        id="status-banner"
+        class="status-banner hidden"
+        role="alert"
+        aria-live="polite"
+      >
+        <span id="status-text"></span>
+      </div>
+
+      <!-- Main controls -->
+      <div id="controls" class="controls">
+        <!-- Dark mode toggle -->
+        <label class="toggle-row" for="toggle-dark">
+          <span class="toggle-label">Enable Dark Mode</span>
+          <div class="toggle-switch">
+            <input
+              type="checkbox"
+              id="toggle-dark"
+              role="switch"
+              aria-checked="false"
+            />
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+          </div>
+        </label>
+
+        <!-- Stronger contrast toggle -->
+        <label class="toggle-row" for="toggle-contrast" id="contrast-row">
+          <span class="toggle-label">Stronger Contrast</span>
+          <div class="toggle-switch">
+            <input
+              type="checkbox"
+              id="toggle-contrast"
+              role="switch"
+              aria-checked="false"
+            />
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Footer -->
+      <footer class="popup-footer">
+        Settings are saved per site automatically.
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
